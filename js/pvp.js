@@ -62,7 +62,7 @@ $(function() {
                         fga++;
                         row = table.insertRow();
                         row.insertCell(0).innerHTML = shot_log[i][1];
-                        row.insertCell(1).innerHTML = shot_log[i][8];
+                        row.insertCell(1).innerHTML = shot_log[i][8].toFixed(1);
                         row.insertCell(2).innerHTML = shot_log[i][11].toFixed(2);
                         row.insertCell(3).innerHTML = shot_log[i][9];
                         cell = row.insertCell(4)
