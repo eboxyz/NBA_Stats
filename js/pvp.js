@@ -65,7 +65,13 @@ $(function() {
                         row.insertCell(1).innerHTML = shot_log[i][8];
                         row.insertCell(2).innerHTML = shot_log[i][11];
                         row.insertCell(3).innerHTML = shot_log[i][9];
-                        row.insertCell(4).innerHTML = shot_log[i][13];
+                        cell = row.insertCell(4)
+                        cell.innerHTML = shot_log[i][13];
+
+                        if (shot_log[i][13] == "made")
+                            cell.style.color = "green";
+                        else
+                            cell.style.color = "red";
                     }
                 }
 

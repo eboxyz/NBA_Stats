@@ -15,6 +15,7 @@ $(document).ready(function() {
                 option = document.createElement("option");
                 option.value = players[i][0];
                 option.text  = players[i][1];
+                //console.log(option);
                 document.getElementById("player_list").add(option);
             }
         },
