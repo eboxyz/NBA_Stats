@@ -4,7 +4,6 @@ var player_name;        // name of current player
 var player_last_name;   // last name of current player
 var multiplier;         // team multiplier
 var score = 0;          // current game score
-var FB;
 
 const PERSON_ID = 0;
 const NAME = 1;
@@ -72,7 +71,7 @@ $(function() {
 
     // when start button is clicked
     $('#start_button').click(function() {
-
+        // set scrolling
         var scroll = setInterval(function() {
             window.scrollBy(0, 3);
             if (window.pageYOffset >= 120)
@@ -85,6 +84,7 @@ $(function() {
         start_screen.style.display = "none";
         game.style.display = "block";
         user_answer.value = ""; 
+        player_last_name = "";
 
         // reset clock / score
         clock.innerHTML = TIME;
@@ -113,7 +113,7 @@ $(function() {
     
     // share results to facebook
     $('#fbshare').click(function() {
-        window.open('https://www.facebook.com/dialog/feed?app_id=997536013635887&display=popup&picture=http://stats.nba.com/media/players/230x185/' + player_id + '.png&caption=http://domkl14.github.io/NBA_Stats/nba_name_game.html&description=I scored ' + score + ' points on the NBA Name Game! How well do you know the faces of the NBA? Test your NBA knowledge in this 90 second challenge!&link=http://domkl14.github.io/NBA_Stats/nba_name_game.html&redirect_uri=http://domkl14.github.io/NBA_Stats/closewindow.html','MyWindow','width=600,height=300'); 
+        window.open('https://www.facebook.com/dialog/feed?app_id=997536013635887&display=popup&picture=http://stats.nba.com/media/players/230x185/' + player_id + '.png&caption=http://domkl14.github.io/NBA_Stats/nba_name_game.html&description=I scored ' + score + ' points in the NBA Name Game! How well do you know the faces of the NBA? Test your NBA knowledge in this 90 second challenge!&link=http://domkl14.github.io/NBA_Stats/nba_name_game.html&redirect_uri=http://domkl14.github.io/NBA_Stats/closewindow.html','MyWindow','width=600,height=300'); 
         return false;
     });
 });
