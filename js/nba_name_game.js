@@ -128,4 +128,34 @@ function getPlayer() {
     // console.log(player_name);
 }
 
+// facebook share
+$(function() {
+    $('#fbshare').click(function() {
+        console.log("hello");
 
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '997536013635887',
+                xfbml      : true,
+                version    : 'v2.5'
+            });
+
+            FB.ui({
+                method: 'feed',
+                href: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
+                picture: 'http://stats.nba.com/media/players/230x185/977.png',
+                name: 'NBA Name Game',
+                caption: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
+                description: 'How well do you know the faces of the NBA?'
+            }, function(response){});
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    });
+});
