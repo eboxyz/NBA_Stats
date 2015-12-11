@@ -72,10 +72,6 @@ $(function() {
 
     // when start button is clicked
     $('#start_button').click(function() {
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/gh-pages
         // hide / show fields
         clock.style.display = "block";
         title.style.display = "none";
