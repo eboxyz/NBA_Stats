@@ -10,7 +10,6 @@ const NAME = 1;
 const TEAM = 9;
 const TIME = 90;
 
-
 $(document).ready(function() {
   $.ajax({
         url: 'http://stats.nba.com/stats/commonallplayers?IsOnlyCurrentSeason=1&LeagueID=00&Season=2015-16',
@@ -128,3 +127,5 @@ function getPlayer() {
 
     // console.log(player_name);
 }
+
+
