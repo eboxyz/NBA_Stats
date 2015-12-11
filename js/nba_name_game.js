@@ -8,7 +8,7 @@ var score = 0;          // current game score
 const PERSON_ID = 0;
 const NAME = 1;
 const TEAM = 9;
-const TIME = 10;
+const TIME = 90;
 
 
 $(document).ready(function() {
