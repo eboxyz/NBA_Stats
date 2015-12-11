@@ -21,6 +21,7 @@
 </head>
  
 <body>
+
 <script>
 window.fbAsyncInit = function() {
     FB.init({
@@ -30,8 +31,9 @@ window.fbAsyncInit = function() {
     });
 
     FB.ui({
-      method: 'share',
-      href: 'https://developers.facebook.com/docs/',
+        method: 'feed',
+        href: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
+        caption: 'An example caption',
     }, function(response){});
 };
 
@@ -43,6 +45,7 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
+
     <div class="container">
         <div class="header">
             <nav>
