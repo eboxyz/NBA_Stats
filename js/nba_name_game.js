@@ -1,9 +1,10 @@
 var players;            // array of all active players
-var player_id;          // player id of current player
+var player_id = 201156; // player id of current player
 var player_name;        // name of current player
 var player_last_name;   // last name of current player
 var multiplier;         // team multiplier
 var score = 0;          // current game score
+var FB;
 
 const PERSON_ID = 0;
 const NAME = 1;
@@ -109,6 +110,12 @@ $(function() {
         user_answer.focus();
         getPlayer();
     });
+    
+    // share results to facebook
+    $('#fbshare').click(function() {
+        window.open('https://www.facebook.com/dialog/feed?app_id=997536013635887&display=popup&picture=http://stats.nba.com/media/players/230x185/' + player_id + '.png&caption=http://domkl14.github.io/NBA_Stats/nba_name_game.html&description=I scored ' + score + ' points on the NBA Name Game! How well do you know the faces of the NBA? Test your NBA knowledge in this 90 second challenge!&link=http://domkl14.github.io/NBA_Stats/nba_name_game.html&redirect_uri=http://domkl14.github.io/NBA_Stats/closewindow.html','MyWindow','width=600,height=300'); 
+        return false;
+    });
 });
 
 // get a random player and show picture
@@ -131,38 +138,4 @@ function getPlayer() {
     player_name = players[r][NAME].substring(players[r][NAME].indexOf(",") + 2).toLowerCase() + " " + player_last_name.toLowerCase();
     
     multiplier = team_select.value == players[r][TEAM];
-
-    // console.log(player_name);
 }
-
-// facebook share
-$(function() {
-    $('#fbshare').click(function() {
-        console.log("hello");
-
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '997536013635887',
-                xfbml      : true,
-                version    : 'v2.5'
-            });
-
-            FB.ui({
-                method: 'feed',
-                href: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
-                picture: 'http://stats.nba.com/media/players/230x185/201156.png',
-                name: 'NBA Name Game',
-                caption: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
-                description: 'I scored a ' + score + ' on the NBA Name Game! How well do you know the faces of the NBA?'
-            }, function(response){});
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    });
-});
