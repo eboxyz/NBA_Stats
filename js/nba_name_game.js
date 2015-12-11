@@ -71,6 +71,13 @@ $(function() {
 
     // when start button is clicked
     $('#start_button').click(function() {
+
+        var scroll = setInterval(function() {
+            window.scrollBy(0, 3);
+            if (window.pageYOffset >= 120)
+                clearInterval(scroll);
+        }, 10);
+
         // hide / show fields
         clock.style.display = "block";
         title.style.display = "none";
