@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>NBA Name Game</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/nba_name_game.js"></script>
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="index.html">Home</a> </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">domkl14</h3>
+        </div>
+
+        <div class="jumbotron">
+            <h1 id="clock" style="font-size:5.5em; display:none"></h2>
+            <div id="title">
+                <h2>NBA Name Game</h2>
+                <p>How well do you know the faces of the NBA?</p>
+            </div>
+        </div>
+
+        <div id="rules">
+        <h4>Rules:</h4>
+            <p>You have <b>90</b> seconds to put a name to a face for each player. If you enter just the last name correctly, you get <b>one</b> point. If you enter the full name correctly, you get <b>two</b> points. You will <b>lose one point</b> for every <b>skip</b> you make. You can skip by pressing the <em>ESC</em> key. Select a team. If you guess correctly for a player on your team, you'll earn an <b>extra</b> point. If you guess incorrectly for a player on your team, you'll <b>lose</b> an extra point. 
+            </p>
+        </div>
+
+        <div id="start_screen" class="form-group">
+            <div class="form-inline text-center">
+                <select id="team_select" style="width: 8em"class="form-control"> 
+                    <option value="ATL">ATL</option> <option value="BOS">BOS</option> 
+                    <option value="BKN">BKN</option> <option value="CHA">CHA</option> 
+                    <option value="CHI">CHI</option> <option value="CLE">CLE</option> 
+                    <option value="DAL">DAL</option> <option value="DEN">DEN</option> 
+                    <option value="DET">DET</option> <option value="GSW">GSW</option> 
+                    <option value="HOU">HOU</option> <option value="IND">IND</option> 
+                    <option value="LAC">LAC</option> <option value="LAL">LAL</option> 
+                    <option value="MEM">MEM</option> <option value="MIA">MIA</option> 
+                    <option value="MIL">MIL</option> <option value="MIN">MIN</option> 
+                    <option value="NOP">NOP</option> <option value="NYK">NYK</option> 
+                    <option value="OKC">OKC</option> <option value="ORL">ORL</option> 
+                    <option value="PHI">PHI</option> <option value="PHX">PHX</option> 
+                    <option value="POR">POR</option> <option value="SAC">SAC</option> 
+                    <option value="SAS">SAS</option> <option value="TOR">TOR</option> 
+                    <option value="UTA">UTA</option> <option value="WAS">WAS</option> 
+                </select>
+                <button disabled="true" id="start_button" class="btn btn-md btn-primary" type="button">New Game</button>  
+            </div>   
+        </div> 
+
+        <div id="game" style="display:none">
+            <img id="player_img" class="img-responsive center-block" 
+            src=""
+            alt="...">
+            <h2 class="text-center"id="points"></h2>
+            <br>
+            
+            <div class="row">
+                <div class="col-md-5 col-md-offset-4">
+                    <div class="input-group">
+                        <input id="user_answer" type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button id="ans" class="btn btn-default" type="button">Go</button>
+                            <button id="skip" class="btn btn-default" type="button">Skip</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>        
+
+        <footer class="footer">
+            <ul class="icons">
+                <li><a href="http://domkl14.github.io" class="fa fa-user" target="_blank"></a></li>
+                <li><a href="mailto:domlam14@gmail.com" class="fa fa-envelope"></a></li>
+                <li><a href="https://github.com/domkl14" class="fa fa-github" target="_blank"></a></li>
+                <li><a href="https://www.linkedin.com/pub/dominick-lam/a6/602/37a" class="fa fa-linkedin" target="_blank"></a></li>
+                <li id="copyright">&copy; Dominick Lam</li>
+            </ul>
+        </footer>
+ 
+    </div>
+</body>
+
+</html>
