@@ -33,7 +33,10 @@ window.fbAsyncInit = function() {
     FB.ui({
         method: 'feed',
         href: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
-        caption: 'An example caption',
+        picture: 'http://stats.nba.com/media/players/230x185/977.png',
+        name: 'NBA Name Game'
+        caption: 'How well do you know the faces of the NBA?',
+        description: 'Test your skills!'
     }, function(response){});
 };
 
