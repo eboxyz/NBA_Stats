@@ -150,10 +150,10 @@ $(function() {
             FB.ui({
                 method: 'feed',
                 href: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
-                picture: 'http://stats.nba.com/media/players/230x185/977.png',
+                picture: 'http://stats.nba.com/media/players/230x185/201156.png',
                 name: 'NBA Name Game',
                 caption: 'http://domkl14.github.io/NBA_Stats/nba_name_game.html',
-                description: 'How well do you know the faces of the NBA?'
+                description: 'I scored a ' + score + ' on the NBA Name Game! How well do you know the faces of the NBA?'
             }, function(response){});
         };
 
