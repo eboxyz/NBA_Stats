@@ -47,34 +47,31 @@ $(function() {
         if (answer == player_name) {
             score += multiplier ? 3 : 2;
             points.innerHTML = "Score: " + score;
+            last_player.innerHTML = "<b>Last Player:</b> " + player_last_name; 
             getPlayer();
         }
         // last name correct
-        else if (answer == player_last_name) {
+        else if (answer == player_last_name.toLowerCase()) {
             score += multiplier ? 2 : 1;
             points.innerHTML = "Score: " + score;
+            last_player.innerHTML = "<b>Last Player:</b> " + player_last_name; 
             getPlayer();
         }
+        user_answer.focus();
         user_answer.value = "";   
     });
 
     $('#skip').click(function() {
         score -= multiplier ? 2 : 1;
         points.innerHTML = "Score: " + score;
+        last_player.innerHTML = "<b>Last Player:</b> " + player_last_name;
         getPlayer();
+        user_answer.focus();
         user_answer.value = "";
     });
 
     // when start button is clicked
     $('#start_button').click(function() {
-        
-        var scroll = setInterval(function() {
-            window.scrollBy(0, 2);
-            if (window.pageYOffset >= 85) 
-                clearInterval(scroll);
-        }, 5);
-
-
         // hide / show fields
         clock.style.display = "block";
         title.style.display = "none";
@@ -124,8 +121,8 @@ function getPlayer() {
     player_img.src = "http://stats.nba.com/media/players/230x185/" + player_id + ".png";
 
     // retrieve last name and full name
-    player_last_name = players[r][NAME].substring(0, players[r][NAME].indexOf(",")).toLowerCase();
-    player_name = players[r][NAME].substring(players[r][NAME].indexOf(",") + 2).toLowerCase() + " " + player_last_name;
+    player_last_name = players[r][NAME].substring(0, players[r][NAME].indexOf(","));
+    player_name = players[r][NAME].substring(players[r][NAME].indexOf(",") + 2).toLowerCase() + " " + player_last_name.toLowerCase();
     
     multiplier = team_select.value == players[r][TEAM];
 
