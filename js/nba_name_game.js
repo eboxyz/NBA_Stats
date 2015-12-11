@@ -67,6 +67,14 @@ $(function() {
 
     // when start button is clicked
     $('#start_button').click(function() {
+        
+        var scroll = setInterval(function() {
+            window.scrollBy(0, 2);
+            if (window.pageYOffset >= 85) 
+                clearInterval(scroll);
+        }, 5);
+
+
         // hide / show fields
         clock.style.display = "block";
         title.style.display = "none";
@@ -80,7 +88,7 @@ $(function() {
         points.innerHTML = "Score: " + score;
 
         // set timer
-        var scroll = setInterval(function() {
+        var timer = setInterval(function() {
             time = parseInt(clock.innerHTML);
             
             // game over
@@ -89,7 +97,7 @@ $(function() {
                 clock.innerHTML = "Final Score: " + score;
                 start_screen.style.display = "block";
                 game.style.display = "none";
-                clearInterval(scroll);
+                clearInterval(timer);
             }
             else
                 clock.innerHTML = time - 1;
