@@ -42,6 +42,7 @@ $(document).ready(function() {
 $(function() {
     $('#ans').click(function() {
        answer = user_answer.value.toLowerCase();
+       answer = answer.replace("'", "").replace(".", "").replace(",","");
         // full name correct
         if (answer == player_name) {
             score += multiplier ? 3 : 2;
@@ -131,6 +132,7 @@ function getPlayer() {
     // assign random player to last player
     player_id = id;
 
+
     // assign team / picture
     player_img.src = "http://stats.nba.com/media/players/230x185/" + player_id + ".png";
 
@@ -138,6 +140,10 @@ function getPlayer() {
     player_last_name = players[r][NAME].substring(0, players[r][NAME].indexOf(","));
     player_name = players[r][NAME].substring(players[r][NAME].indexOf(",") + 2).toLowerCase() + " " + player_last_name.toLowerCase();
     
+    // remove punctuation
+    player_last_name = player_last_name.replace("'", "").replace(".", "").replace(",", "");
+    player_name = player_name.replace("'", "").replace(".", "").replace(",","");
+
     // nene case
     if (player_id == 2403)
         player_name = "nene";
