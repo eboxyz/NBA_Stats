@@ -99,6 +99,7 @@ $(function() {
             if (time == 1) {
                 // hide / show fields
                 clock.innerHTML = "Final Score: " + score;
+                last_player.innerHTML = "<b>Last Player:</b> "; 
                 start_screen.style.display = "block";
                 game.style.display = "none";
                 clearInterval(timer);
@@ -137,5 +138,9 @@ function getPlayer() {
     player_last_name = players[r][NAME].substring(0, players[r][NAME].indexOf(","));
     player_name = players[r][NAME].substring(players[r][NAME].indexOf(",") + 2).toLowerCase() + " " + player_last_name.toLowerCase();
     
+    // nene case
+    if (player_id == 2403)
+        player_name = "nene";
+
     multiplier = team_select.value == players[r][TEAM];
 }
